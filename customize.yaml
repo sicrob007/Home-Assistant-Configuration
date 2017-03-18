@@ -1,0 +1,99 @@
+########CUSTOMIZE DEVICES########
+     device_tracker.5vt5t16226000048:
+        entity_picture: !secret device_1_img
+        friendly_name: !secret device_1_name
+     device_tracker.androidca44f37b0ad29a0a:
+        entity_picture: !secret device_2_img
+        friendly_name: !secret device_2_name
+     device_tracker.90e7c4e82d12:
+        entity_picture: !secret device_3_img
+        friendly_name: !secret device_3_name
+
+########CUSTOMIZE WEATHER########
+     sensor.dark_sky_summary:
+        friendly_name: Summary
+     sensor.dark_sky_temperature:
+        friendly_name: Outside Temperature
+     sensor.dark_sky_wind_speed:
+        friendly_name: Wind
+     sun.sun:
+        hidden: true
+        
+########CUSTOMIZE NEST########
+     binary_sensor.downstairs_thermostat_fan:
+        hidden: true
+     binary_sensor.downstairs_thermostat_has_leaf:
+        hidden: true
+     binary_sensor.downstairs_thermostat_is_locked:
+        hidden: true
+     binary_sensor.downstairs_thermostat_is_using_emergency_heat:
+        hidden: true
+     binary_sensor.downstairs_thermostat_online:
+        hidden: true
+     sensor.downstairs_thermostat_temperature:
+        friendly_name: Inside Temperature
+     sensor.downstairs_thermostat_humidity:
+        hidden: true
+     sensor.downstairs_thermostat_operation_mode:
+        hidden: true     
+     sensor.downstairs_thermostat_target:
+        hidden: true
+     sensor.downstairs_thermostat_hvac_state:
+        hidden: true
+     climate.downstairs:        
+        friendly_name: Nest  
+
+########CUSTOMIZE SPEEDTEST########
+     sensor.speedtest_download:
+        friendly_name: Download Speed
+        icon: mdi:download
+     sensor.speedtest_upload:
+        friendly_name: Upload Speed
+        icon: mdi:upload
+     sensor.speedtest_ping:     
+        friendly_name: Ping
+        icon: mdi:speedometer        
+
+########CUSTOMIZE GAMER PC########
+     sensor.gamer_ram_free:
+        icon: mdi:memory
+     sensor.gamer_disk_use:
+        icon: mdi:harddisk
+
+########CUSTOMIZE MEDICENTER PC########
+     sensor.mediacenter_ram_free:
+        icon: mdi:memory
+     sensor.mediacenter_disk_use:
+        icon: mdi:harddisk
+
+########CUSTOMIZE MEDIAPLAYER########
+     media_player.roku_2l543f180811:
+        friendly_name: Bedroom Roku
+     media_player.plex_for_sony_opera_tv_store:
+        friendly_name: Sony Plex
+     media_player.sony_bravia_tv:
+        friendly_name: Sony Bravia
+     media_player.insigniaroku_tv__2n002p734475:
+        friendly_name: Andrea Plex
+     media_player.roku_2n002p734475:
+        friendly_name: Andrea Roku
+     media_player.insigniaroku_tv__2n00g3592302:
+        friendly_name: Brendan Plex
+     media_player.roku_2n00g3592302:
+        friendly_name: Brendan Roku
+     media_player.plex_web_chrome:
+        friendly_name: Gamer Plex
+     media_player.roku_stick__2l543f180811:
+        friendly_name: Bedroom Plex
+
+########CUSTOMIZE LOCK and BATTERY########        
+     sensor.mqtt_sensor:
+        friendly_name: Schlage Battery
+        icon: mdi:battery-charging-80
+     lock.mqtt_lock:
+        friendly_name: Schlage Lock
+
+########CUSTOMIZE SENSORS########
+     group.all_automations:
+        hidden: false
+        friendly_name: Automations  

@@ -1,0 +1,7 @@
+- platform: mqtt
+  command_topic: "smartthings/Front Door Deadbolt/lock"
+  state_topic: "smartthings/Front Door Deadbolt/lock"
+  payload_lock: "locked"
+  payload_unlock: "unlocked"
+  retain: true
+  

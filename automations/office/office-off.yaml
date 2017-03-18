@@ -1,0 +1,11 @@
+########Turn Off Office Lights 5 min after no motion########
+alias: Turn Off Office Lights 5 min after no motion
+trigger:
+  platform: state
+  entity_id: switch.office_motion_sensor
+  to: 'off'
+  for:
+    minutes: 5
+action:
+  service: light.turn_off
+  entity_id: light.office_desk_light, light.office_front_light

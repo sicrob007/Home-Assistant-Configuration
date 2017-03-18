@@ -1,0 +1,69 @@
+homeassistant:
+  name: Home
+  latitude: !secret latitude
+  longitude: !secret longitude
+  elevation: 843
+  unit_system: imperial
+  time_zone: !secret time_zone
+  customize: !include customize.yaml
+####################################################
+#                                                  #
+#                     INCLUDES                     #
+#                                                  #
+####################################################
+group: !include groups.yaml
+device_tracker: !include device_trackers.yaml
+sensor: !include sensors.yaml
+#Not supported with HTTPS.  Will fix later
+panel_iframe: !include panels.yaml
+light: !include light.yaml
+switch: !include switch.yaml
+lock: !include lock.yaml
+automation: !include_dir_list automations
+input_slider: !include input_slider.yaml
+#input_select: !include input_select.yaml
+notify: !include notify.yaml
+history: !include history.yaml
+media_player: !include media_player.yaml
+weblink: !include weblink.yaml
+####################################################
+#                                                  #
+#                     ENABLES                      #
+#                                                  #
+####################################################
+config:
+logbook:
+updater:
+recorder:
+  db_url: postgres://@/homeassistant
+sun:
+frontend:
+discovery:
+http:
+  api_password: !secret api_password
+  ssl_certificate: !secret ssl_certificate
+  ssl_key: !secret ssl_key
+  base_url: !secret base_url
+  ip_ban_enabled: True
+  login_attempts_threshold: 3
+
+# MQTT broker
+mqtt:
+  broker: !secret mqtt_host
+  port: 1883
+  client_id: homeassistant-1
+  username: !secret mqtt_user
+  password: !secret mqtt_password
+
+
+#Nest Thermostat
+nest:
+  client_id: !secret nest_client_id
+  client_secret: !secret nest_client_secret
+climate:
+  platform: nest
+
+#Text to Speech
+tts:
+  - platform: google
+    cache: false

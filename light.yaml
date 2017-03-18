@@ -1,0 +1,80 @@
+######## LIGHTS ########
+
+######## LIVING ROOM COUCH LAMP ########
+- platform: mqtt
+  name: "Living Room Couch Light"
+  command_topic: "smartthings/Living Room Couch Light/switch"
+  state_topic: "smartthings/Living Room Couch Light/switch"
+  brightness_command_topic: "smartthings/Living Room Couch Light/level"
+  brightness_state_topic: "smartthings/Living Room Couch Light/level"
+  brightness_scale: 100
+  qos: 0
+  payload_on: "on"
+  payload_off: "off"
+  retain: true
+
+######## FAMILY ROOM LAMP ########
+- platform: mqtt
+  name: "Family Room Light"
+  command_topic: "smartthings/Family Room Light/switch"
+  state_topic: "smartthings/Family Room Light/switch"
+  brightness_command_topic: "smartthings/Family Room Light/level"
+  brightness_state_topic: "smartthings/Family Room Light/level"
+  brightness_scale: 100
+  qos: 0
+  payload_on: "on"
+  payload_off: "off"
+  retain: true  
+
+######## HALL BATHROOM LIGHT ########
+- platform: mqtt
+  name: "Hall Bathroom Light"
+  command_topic: "smartthings/Hall 1/switch"
+  state_topic: "smartthings/Hall 1/switch"
+  brightness_command_topic: "smartthings/Hall 1/level"
+  brightness_state_topic: "smartthings/Hall 1/level"
+  brightness_scale: 100
+  qos: 0
+  payload_on: "on"
+  payload_off: "off"
+  retain: true
+
+######## HALL OFFICE LIGHT ########
+- platform: mqtt
+  name: "Hall Office Light"
+  command_topic: "smartthings/Hall 2/switch"
+  state_topic: "smartthings/Hall 2/switch"
+  brightness_command_topic: "smartthings/Hall 2/level"
+  brightness_state_topic: "smartthings/Hall 2/level"
+  brightness_scale: 100
+  qos: 0
+  payload_on: "on"
+  payload_off: "off"
+  retain: true
+
+######## HALL OFFICE DESK LIGHT ########
+- platform: mqtt
+  name: "Office Desk Light"
+  command_topic: "smartthings/Office 1/switch"
+  state_topic: "smartthings/Office 1/switch"
+  brightness_command_topic: "smartthings/Office 1/level"
+  brightness_state_topic: "smartthings/Office 1/level"
+  brightness_scale: 100
+  qos: 0
+  payload_on: "on"
+  payload_off: "off"
+  retain: true  
+
+######## HALL OFFICE FRONT LIGHT ########
+- platform: mqtt
+  name: "Office Front Light"
+  command_topic: "smartthings/Office 2/switch"
+  state_topic: "smartthings/Office 2/switch"
+  brightness_command_topic: "smartthings/Office 2/level"
+  brightness_state_topic: "smartthings/Office 2/level"
+  brightness_scale: 100
+  qos: 0
+  payload_on: "on"
+  payload_off: "off"
+  retain: true  
+

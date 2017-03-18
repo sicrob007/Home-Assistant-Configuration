@@ -1,0 +1,7 @@
+entities:
+  - name: "MediaCenter Glances Monitoring"
+    url: !secret mediacenter_glances_url
+    icon: mdi:link
+  - name: "Gamer Glances Monitoring"
+    url: !secret gamer_glances_url
+    icon: mdi:link

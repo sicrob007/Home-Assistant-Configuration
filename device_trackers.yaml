@@ -1,0 +1,7 @@
+- platform: netgear
+  host: !secret netgear_host
+  username: !secret netgear_username
+  password: !secret netgear_password
+  track_new_devices: false
+
+- platform: gpslogger

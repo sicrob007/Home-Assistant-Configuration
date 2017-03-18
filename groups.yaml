@@ -1,0 +1,154 @@
+######## GROUPS ########
+
+######## DEFAULT VIEW ########
+default_view:
+  view: yes
+  entities:
+    - device_tracker.5vt5t16226000048
+    - device_tracker.androidca44f37b0ad29a0a
+    - device_tracker.90e7c4e82d12
+    - group.thermostat
+    - group.home_lights
+    - group.lock
+    - media_player.bedroom_home
+    - media_player.roku_stick
+    - media_player.roku_stick_2
+    - media_player.roku_2
+    - media_player.roku_2l543f180811
+    - media_player.sony_bravia_tv
+    - media_player.plex_for_sony_opera_tv_store
+    - media_player.bedroom_home
+    - media_player.plex_web_chrome
+    - media_player.roku_2l543f180811_2
+    - media_player.roku_stick__2l543f180811
+
+######## NEST VIEW ########
+Nest:
+  view: yes
+  entities:
+    - group.thermostat
+    - group.weather
+
+######## ANDREA ROOM VIEW ########
+Andrea:
+  view: yes
+  entities:
+    - media_player.insigniaroku_tv__2n002p734475
+    - media_player.andrea_roku
+  
+######## BRENDAN ROOM VIEW ########
+Brendan:
+  view: yes
+  entities:
+    - media_player.insigniaroku_tv__2n00g3592302
+    - media_player.brendan_roku
+  
+######## MONITOR VIEW ########  
+Monitor:
+  view: yes
+  entities:
+    - group.raspberry_pi
+    - group.speedtest
+    - group.gamer_pc
+    - group.mediacenter_pc
+
+######## AUTOMATION VIEW ########  
+Automation:
+  view: yes
+  entities:
+    - group.switches
+    - group.all_automations
+
+######## THERMOSTAT GROUP ########
+Thermostat:
+  view: no
+  entities:
+    - climate.downstairs
+  
+######## WEATHER GROUP ########  
+Weather:
+  view: no
+  entities:
+    - sensor.dark_sky_summary
+    - sensor.dark_sky_temperature
+    - sensor.downstairs_thermostat_temperature
+    - sensor.dark_sky_wind_speed
+
+######## SPEEDTEST GROUP ########
+Speedtest:
+  view: no
+  entities:
+    - sensor.speedtest_download
+    - sensor.speedtest_upload
+    - sensor.speedtest_ping
+
+######## PI GROUP ########  
+Raspberry Pi:
+  view: no
+  entities:
+    - sensor.cpu_use
+    - sensor.ram_free
+    - sensor.disk_use_home
+    
+######## GAMER GROUP ########  
+Gamer PC:
+  view: no
+  entities:
+    - sensor.gamer_ram_free
+    - sensor.gamer_disk_use
+    - weblink.gamer_glances_monitoring
+
+######## MEDIACENTER GROUP ########  
+MediaCenter PC:
+  view: no
+  entities:
+    - sensor.mediacenter_ram_free
+    - sensor.mediacenter_disk_use
+    - weblink.mediacenter_glances_monitoring
+
+######## All LIGHTS GROUP ########  
+Home Lights:
+  view: no
+  entities:
+    - group.Office_Lights
+    - group.Family_Room_Lights
+    - group.Hall_Lights
+
+######## FAMILY ROOM LIGHT GROUP ########  
+Family Room Lights:
+  icon: mdi:television
+  view: no
+  entities:
+    - light.family_room_light
+    - light.living_room_couch_light  
+
+######## HALL LIGHTS GROUP ########  
+Hall Lights:
+  icon: mdi:lamp
+  view: no
+  entities:
+    - light.hall_office_light
+    - light.hall_bathroom_light
+
+######## HALL LIGHTS GROUP ########  
+Office Lights:
+  icon: mdi:domain
+  view: no
+  entities:
+    - light.office_desk_light
+    - light.office_front_light
+
+######## LOCK GROUP ########  
+Lock:
+  view: no
+  entities:
+    - sensor.mqtt_sensor
+    - lock.mqtt_lock
+
+######## SWITCHES GROUP ########  
+Switches:
+  control: hidden
+  entities:
+    - switch.andrea_door_code
+    - switch.kellie_door_code
+    - switch.robert_door_code

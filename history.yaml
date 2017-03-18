@@ -1,0 +1,27 @@
+exclude:
+  domains:
+    - automation
+    - weblink
+    - updater
+    - media_player
+    - group
+    - light
+  entities:
+    - binary_sensor.downstairs_thermostat_fan
+    - binary_sensor.downstairs_thermostat_has_leaf
+    - binary_sensor.downstairs_thermostat_is_locked
+    - binary_sensor.downstairs_thermostat_is_using_emergency_heat
+    - binary_sensor.downstairs_thermostat_online
+    - group.thermostat
+    - group.all_switches
+    - group.office_lights
+    - group.hall_lights
+    - group.family_room_lights
+    - group.automation
+    - group.all_automations
+    - group.weather
+    - group.speedtest
+    - group.raspberry_pi
+    - input_slider.hallway_brightness
+    - input_slider.office_brightness
+    - group.all_lights

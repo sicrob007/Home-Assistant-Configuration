@@ -1,0 +1,31 @@
+## gitignore ##
+
+#files types to ignore
+*.pid
+*.xml
+*.csr
+*.crt
+*.key
+*.db-journal
+*.conf
+
+#folders to ignore
+www
+lib
+deps
+tts
+
+#files to ignore
+OZW_Log.txt
+home-assistant.log
+home-assistant_v2.db
+secrets.yaml
+known_devices.yaml
+plex.conf
+bravia.conf
+nest.conf
+configurator.py
+
+#special files to ignore
+.*
+!/.gitignore

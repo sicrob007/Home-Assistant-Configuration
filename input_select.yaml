@@ -1,0 +1,19 @@
+radio_station:
+  name: 'Select Radio Station:'
+  options:
+    - Radio 538
+    - Q-Music
+    - 3FM
+    - 100% NL
+    - Veronica
+    - Sky Radio
+    - Arrow Classic Rock
+    - Classic FM
+    - BNR Nieuwsradio
+    - SLAM! Hardstyle
+    - Sleep Radio
+    - Ambient Sleeping Pill
+    - Radio Art - Sleep
+    - Ambi Nature Radio
+    - Calm Radio - Sleep
+    - Dinamo.FM Sleep

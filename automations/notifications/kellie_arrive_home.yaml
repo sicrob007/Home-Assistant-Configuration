@@ -1,0 +1,16 @@
+########Notification when Kellie arrives########
+alias: Kellie arrives home
+initial_state: True
+hide_entity: False
+trigger:
+  platform: mqtt
+  topic: "smartthings/Kellie Door Code/switch"
+  payload: "on"
+action:
+  - service: notify.slack
+    data:
+      message: "Kellie has arrived home."
+  - service: mqtt.publish
+    data:
+      topic: "smartthings/Kellie Door Code/switch"
+      payload: "off"

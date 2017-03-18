@@ -1,0 +1,85 @@
+######## SENSORS ########
+
+######## DARKSKY WEATHER SENSOR ########
+- platform: darksky
+  api_key: !secret darksky_api_key
+  monitored_conditions:
+    - summary
+    - temperature
+    - wind_speed
+
+######## SPEEDTEST SENSOR ########
+- platform: speedtest
+  minute:
+    - 0
+    - 10
+    - 20
+    - 30
+    - 40
+    - 50
+  monitored_conditions:
+    - ping
+    - download
+    - upload
+
+######## PI SYSTEM MONITOR SENSOR ########
+- platform: systemmonitor
+  minute:
+    - 0
+    - 10
+    - 20
+    - 30
+    - 40
+    - 50
+  resources:
+    - type: disk_use_percent
+      arg: /home
+    - type: memory_free
+    - type: processor_use
+
+######## HOMEAUTOMATION PI MONITOR SENSOR ########
+- platform: netdata
+  name: HomeAutomation NetData
+  resources:
+    - memory_free
+    - memory_used
+    - memory_cached
+    - memory_buffers
+    - swap_free
+    - swap_used
+    - processes_running
+    - processes_blocked
+    - system_load
+    - system_io_in
+    - system_io_out
+######## NEST SENSOR ########
+- platform: nest
+  monitored_conditions:
+    - 'temperature'
+    - 'target'
+    - 'humidity'
+    - 'operation_mode'
+
+######## FRONT DOOR LOCK BATTERY SENSOR ########    
+- platform: mqtt
+  state_topic: "smartthings/Front Door Deadbolt/battery"
+  unit_of_measurement: "%"
+  retain: true
+  
+######## GAMER GLANCES MONITORING ########      
+- platform: glances
+  host: !secret gamer_glances_host
+  port: "61208"
+  name: "Gamer"
+  resources:
+    - 'disk_use_percent'
+    - 'memory_free'
+
+######## MEDIACENTER GLANCES MONITORING ########      
+- platform: glances
+  host: !secret mediacenter_glances_host
+  port: "61208"
+  name: "MediaCenter"
+  resources:
+    - 'disk_use_percent'
+    - 'memory_free'

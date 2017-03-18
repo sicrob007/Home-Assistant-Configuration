@@ -1,0 +1,14 @@
+- platform: cast
+  host: !secret google_cast_host
+
+
+#- platform: plex
+
+#- platform: roku
+#  host: 192.168.128.52
+
+#- platform: roku
+#  host: 192.168.128.53
+
+#- platform: roku
+#  host: 192.168.128.56  

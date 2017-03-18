@@ -1,0 +1,16 @@
+########Notification when Andrea arrives########
+alias: Andrea arrives home
+initial_state: True
+hide_entity: False
+trigger:
+  platform: mqtt
+  topic: "smartthings/Andrea Door Code/switch"
+  payload: "on"
+action:
+  - service: notify.slack
+    data:
+      message: "Andrea has arrived home."
+  - service: mqtt.publish
+    data:
+      topic: "smartthings/Andrea Door Code/switch"
+      payload: "off"

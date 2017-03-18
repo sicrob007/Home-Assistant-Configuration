@@ -1,0 +1,12 @@
+#  sonarr:
+#    title: 'TV Shows'
+#    url: !secret sonarr-url
+#    icon: mdi:movie
+#  couchpotato:
+#    title: 'Movies'
+#    url: !secret couchpotato_url
+#    icon: mdi:television
+  configurator:
+    title: Configurator
+    icon: mdi:wrench
+    url: !secret configurator_url

@@ -1,0 +1,11 @@
+########Notification when new HASS update is available########
+alias: New HomeAssistant Update is available
+initial_state: True
+hide_entity: False
+trigger:
+  platform: state
+  entity_id: updater.updater
+action:
+  - service: notify.slack
+    data:
+      message: "A new update is now available for Home Assistant.\n\n `$ sudo systemctl stop home-assistant@homeassistant.service`\n`$ sudo su -s /bin/bash homeassistant`\n`$ source /srv/homeassistant/bin/activate`\n`$ pip3 install --upgrade homeassistant`\n`$ exit`\n`$ sudo systemctl start home-assistant@homeassistant.service`"

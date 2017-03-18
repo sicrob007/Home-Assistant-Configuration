@@ -1,0 +1,41 @@
+######## SWITCHES ########
+
+######## KELLIE DOOR CODE ########
+- platform: mqtt
+  name: "Kellie Door Code"
+  command_topic: "smartthings/Kellie Door Code/switch"
+  state_topic: "smartthings/Kellie Door Code/switch"
+  qos: 0
+  payload_on: "on"
+  payload_off: "off"
+  retain: true
+
+######## ANDREA DOOR CODE ########
+- platform: mqtt
+  name: "Andrea Door Code"
+  command_topic: "smartthings/Andrea Door Code/switch"
+  state_topic: "smartthings/Andrea Door Code/switch"
+  qos: 0
+  payload_on: "on"
+  payload_off: "off"
+  retain: true
+
+######## ROBERT DOOR CODE ########
+- platform: mqtt
+  name: "Robert Door Code"
+  command_topic: "smartthings/Robert Door Code/switch"
+  state_topic: "smartthings/Robert Door Code/switch"
+  qos: 0
+  payload_on: "on"
+  payload_off: "off"
+  retain: true
+  
+######## OFFICE MOTION SENSOR ########
+- platform: mqtt
+  name: "Office Motion Sensor"
+  command_topic: "smartthings/Office Motion Sensor/motion"
+  state_topic: "smartthings/Office Motion Sensor/motion"
+  qos: 0
+  payload_on: "active"
+  payload_off: "inactive"
+  retain: true  

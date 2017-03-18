@@ -1,0 +1,14 @@
+######## NOTIFICATIONS ########
+
+######## SLACK NOTIFICATION PLATFORM ########
+- platform: slack
+  name: slack
+  api_key: !secret slack_api_key
+  default_channel: '#general'
+
+######## TWILIO SMS NOTIFICATION PLATFORM ########
+#- platform: twilio_sms
+#  name: twilio
+#  account_sid: !secret twilio_account_sid
+#  auth_token: !secret twilio_auth_token
+#  from_number: !secret twilio_from_number
