@@ -94,8 +94,10 @@ Raspberry Pi:
 Gamer PC:
   view: no
   entities:
+    - sensor.gamer_cpu_use
     - sensor.gamer_ram_free
-    - sensor.gamer_disk_use
+    - sensor.gamer_c
+    - sensor.gamer_d
     - weblink.gamer_glances_monitoring
 
 ######## MEDIACENTER GROUP ########  

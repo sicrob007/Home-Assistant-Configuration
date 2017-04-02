@@ -55,10 +55,17 @@
         icon: mdi:speedometer        
 
 ########CUSTOMIZE GAMER PC########
-     sensor.gamer_ram_free:
-        icon: mdi:memory
      sensor.gamer_disk_use:
         icon: mdi:harddisk
+     sensor.gamer_c:
+        icon: mdi:harddisk
+     sensor.gamer_d:
+        icon: mdi:harddisk
+     sensor.gamer_cpu_use:
+        icon: mdi:memory
+     sensor.gamer_ram_free:
+        icon: mdi:memory
+        
 
 ########CUSTOMIZE MEDICENTER PC########
      sensor.mediacenter_ram_free:

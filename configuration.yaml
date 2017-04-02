@@ -35,6 +35,7 @@ config:
 logbook:
 updater:
 recorder:
+  purge_days: 5
   db_url: postgres://@/homeassistant
 sun:
 frontend:

@@ -10,13 +10,7 @@
 
 ######## SPEEDTEST SENSOR ########
 - platform: speedtest
-  minute:
-    - 0
-    - 10
-    - 20
-    - 30
-    - 40
-    - 50
+  scan_interval: 300
   monitored_conditions:
     - ping
     - download
@@ -24,13 +18,7 @@
 
 ######## PI SYSTEM MONITOR SENSOR ########
 - platform: systemmonitor
-  minute:
-    - 0
-    - 10
-    - 20
-    - 30
-    - 40
-    - 50
+  scan_interval: 300
   resources:
     - type: disk_use_percent
       arg: /home
@@ -39,6 +27,7 @@
 
 ######## HOMEAUTOMATION PI MONITOR SENSOR ########
 - platform: netdata
+  scan_interval: 300
   name: HomeAutomation NetData
   resources:
     - memory_free
@@ -52,6 +41,7 @@
     - system_load
     - system_io_in
     - system_io_out
+
 ######## NEST SENSOR ########
 - platform: nest
   monitored_conditions:
@@ -68,18 +58,48 @@
   
 ######## GAMER GLANCES MONITORING ########      
 - platform: glances
+  scan_interval: 300
   host: !secret gamer_glances_host
   port: "61208"
   name: "Gamer"
   resources:
     - 'disk_use_percent'
-    - 'memory_free'
 
 ######## MEDIACENTER GLANCES MONITORING ########      
 - platform: glances
+  scan_interval: 300
   host: !secret mediacenter_glances_host
   port: "61208"
   name: "MediaCenter"
   resources:
     - 'disk_use_percent'
     - 'memory_free'
+
+######## GAMER GLANCES REST MONITORING ########
+- platform: rest
+  scan_interval: 300
+  resource: !secret gamer_glances
+  name: Gamer CPU Use
+  unit_of_measurement: '%'
+  value_template: '{{ value_json.cpu.total }}'
+
+- platform: rest
+  scan_interval: 300
+  resource: !secret gamer_glances
+  name: Gamer RAM Free
+  unit_of_measurement: MB
+  value_template: '{{ value_json.mem.free | multiply(0.000000954) | round(0) }}'
+
+- platform: rest
+  scan_interval: 300
+  resource: !secret gamer_glances
+  name: 'Gamer C:'
+  unit_of_measurement: '%'
+  value_template: '{{ value_json.fs[0].percent }}'
+
+- platform: rest
+  scan_interval: 300
+  resource: !secret gamer_glances
+  name: 'Gamer D:'
+  unit_of_measurement: '%'
+  value_template: '{{ value_json.fs[1].percent }}'

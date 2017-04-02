@@ -14,6 +14,7 @@ www
 lib
 deps
 tts
+SQL
 
 #files to ignore
 OZW_Log.txt
