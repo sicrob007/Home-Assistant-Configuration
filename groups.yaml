@@ -10,14 +10,13 @@ default_view:
     - group.thermostat
     - group.home_lights
     - group.lock
-    - media_player.bedroom_home
     - media_player.roku_stick
     - media_player.roku_stick_2
     - media_player.roku_2
     - media_player.roku_2l543f180811
     - media_player.sony_bravia_tv
     - media_player.plex_for_sony_opera_tv_store
-    - media_player.bedroom_home
+    - media_player.living_room_home
     - media_player.plex_web_chrome
     - media_player.roku_2l543f180811_2
     - media_player.roku_stick__2l543f180811
