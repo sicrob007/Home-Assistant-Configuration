@@ -1,0 +1,14 @@
+########Notification when door left unlocked########
+alias: Door has been left unlocked.
+initial_state: True
+hide_entity: False
+trigger:
+  platform: state
+  entity_id: lock.mqtt_lock
+  to: 'unlocked'
+  for:
+    minutes: 15
+action:
+  - service: notify.slack
+    data:
+      message: "The Front Door has been left unlocked."
