@@ -11,4 +11,10 @@ trigger:
 action:
   - service: notify.slack
     data:
-      message: "The Front Door has been left unlocked."
+      message: "The Front Door has been left unlocked for longer than 15min.  Please investigate."
+  - service: notify.sendgrid_robert
+    data:
+      message: "The Front Door has been left unlocked for longer than 15min.  Please investigate."
+  - service: notify.sendgrid_kellie
+    data:
+      message: "The Front Door has been left unlocked for longer than 15min.  Please investigate."      
