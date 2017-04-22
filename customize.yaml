@@ -68,9 +68,15 @@
         
 
 ########CUSTOMIZE MEDICENTER PC########
+     sensor.mediacenter_cpu_use:
+        icon: mdi:memory
      sensor.mediacenter_ram_free:
         icon: mdi:memory
-     sensor.mediacenter_disk_use:
+     sensor.mediacenter_c:
+        icon: mdi:harddisk
+     sensor.mediacenter_movies:
+        icon: mdi:harddisk
+     sensor.mediacenter_tv:
         icon: mdi:harddisk
 
 ########CUSTOMIZE MEDIAPLAYER########

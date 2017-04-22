@@ -103,8 +103,11 @@ Gamer PC:
 MediaCenter PC:
   view: no
   entities:
+    - sensor.mediacenter_cpu_use
     - sensor.mediacenter_ram_free
-    - sensor.mediacenter_disk_use
+    - sensor.mediacenter_c
+    - sensor.mediacenter_movies
+    - sensor.mediacenter_tv
     - weblink.mediacenter_glances_monitoring
 
 ######## All LIGHTS GROUP ########  

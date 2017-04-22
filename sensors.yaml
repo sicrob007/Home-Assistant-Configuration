@@ -55,25 +55,6 @@
   state_topic: "smartthings/Front Door Deadbolt/battery"
   unit_of_measurement: "%"
   retain: true
-  
-######## GAMER GLANCES MONITORING ########      
-- platform: glances
-  scan_interval: 300
-  host: !secret gamer_glances_host
-  port: "61208"
-  name: "Gamer"
-  resources:
-    - 'disk_use_percent'
-
-######## MEDIACENTER GLANCES MONITORING ########      
-- platform: glances
-  scan_interval: 300
-  host: !secret mediacenter_glances_host
-  port: "61208"
-  name: "MediaCenter"
-  resources:
-    - 'disk_use_percent'
-    - 'memory_free'
 
 ######## GAMER GLANCES REST MONITORING ########
 - platform: rest
@@ -103,3 +84,42 @@
   name: 'Gamer D:'
   unit_of_measurement: '%'
   value_template: '{{ value_json.fs[1].percent }}'
+
+######## MEDIACENTER GLANCES REST MONITORING ########
+- platform: rest
+  scan_interval: 300
+  resource: !secret mediacenter_glances
+  name: MediaCenter CPU Use
+  unit_of_measurement: '%'
+  value_template: '{{ value_json.cpu.total }}'
+
+- platform: rest
+  scan_interval: 300
+  resource: !secret mediacenter_glances
+  name: MediaCenter RAM Free
+  unit_of_measurement: MB
+  value_template: '{{ value_json.mem.free | multiply(0.000000954) | round(0) }}'
+
+- platform: rest
+  scan_interval: 300
+  resource: !secret mediacenter_glances
+  name: 'MediaCenter C:'
+  icon: mdi:harddisk
+  unit_of_measurement: '%'
+  value_template: '{{ value_json.fs[0].percent }}'
+
+- platform: rest
+  scan_interval: 300
+  resource: !secret mediacenter_glances
+  name: 'MediaCenter Movies'
+  icon: mdi:harddisk
+  unit_of_measurement: '%'
+  value_template: '{{ value_json.fs[1].percent }}'
+
+- platform: rest
+  scan_interval: 300
+  resource: !secret mediacenter_glances
+  name: 'MediaCenter TV'
+  icon: mdi:harddisk
+  unit_of_measurement: '%'
+  value_template: '{{ value_json.fs[2].percent }}'
