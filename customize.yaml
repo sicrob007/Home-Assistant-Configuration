@@ -110,3 +110,7 @@
      group.all_automations:
         hidden: false
         friendly_name: Automations  
+        
+########CUSTOMIZE SWITCHES########
+     switch.office_switch:
+        icon: mdi:domain

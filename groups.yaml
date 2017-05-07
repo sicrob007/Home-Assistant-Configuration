@@ -116,15 +116,19 @@ Home Lights:
   entities:
     - group.Office_Lights
     - group.Family_Room_Lights
+    - switch.Living_Room_Switch
     - group.Hall_Lights
+    - switch.master_bedroom_switch
+    - switch.Brendan_Switch
+    - switch.Andrea_Switch    
 
 ######## FAMILY ROOM LIGHT GROUP ########  
 Family Room Lights:
   icon: mdi:television
   view: no
   entities:
-    - light.family_room_light
-    - light.living_room_couch_light  
+    - light.front_room_lamp
+    - light.back_room_lamp  
 
 ######## HALL LIGHTS GROUP ########  
 Hall Lights:
@@ -134,11 +138,13 @@ Hall Lights:
     - light.hall_office_light
     - light.hall_bathroom_light
 
-######## HALL LIGHTS GROUP ########  
+######## OFFICE LIGHTS GROUP ########  
 Office Lights:
   icon: mdi:domain
   view: no
   entities:
+    - switch.Office_Switch
+    - input_slider.office_brightness  
     - light.office_desk_light
     - light.office_front_light
 

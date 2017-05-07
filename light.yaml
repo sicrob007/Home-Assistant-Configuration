@@ -2,11 +2,11 @@
 
 ######## LIVING ROOM COUCH LAMP ########
 - platform: mqtt
-  name: "Living Room Couch Light"
-  command_topic: "smartthings/Living Room Couch Light/switch"
-  state_topic: "smartthings/Living Room Couch Light/switch"
-  brightness_command_topic: "smartthings/Living Room Couch Light/level"
-  brightness_state_topic: "smartthings/Living Room Couch Light/level"
+  name: "Front Room Lamp"
+  command_topic: "smartthings/Front Room Lamp/switch"
+  state_topic: "smartthings/Front Room Lamp/switch"
+  brightness_command_topic: "smartthings/Front Room Lamp/level"
+  brightness_state_topic: "smartthings/Front Room Lamp/level"
   brightness_scale: 100
   qos: 0
   payload_on: "on"
@@ -15,11 +15,11 @@
 
 ######## FAMILY ROOM LAMP ########
 - platform: mqtt
-  name: "Family Room Light"
-  command_topic: "smartthings/Family Room Light/switch"
-  state_topic: "smartthings/Family Room Light/switch"
-  brightness_command_topic: "smartthings/Family Room Light/level"
-  brightness_state_topic: "smartthings/Family Room Light/level"
+  name: "Back Room Lamp"
+  command_topic: "smartthings/Back Room Lamp/switch"
+  state_topic: "smartthings/Back Room Lamp/switch"
+  brightness_command_topic: "smartthings/Back Room Lamp/level"
+  brightness_state_topic: "smartthings/Back Room Lamp/level"
   brightness_scale: 100
   qos: 0
   payload_on: "on"

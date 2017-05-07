@@ -29,7 +29,57 @@
   payload_on: "on"
   payload_off: "off"
   retain: true
-  
+
+######## OFFICE WALL SWITCH ########
+- platform: mqtt
+  name: "Office Switch"
+  command_topic: "smartthings/Office Switch/switch"
+  state_topic: "smartthings/Office Switch/switch"
+  qos: 0
+  payload_on: "on"
+  payload_off: "off"
+  retain: true  
+
+######## LIVING ROOM WALL SWITCH ########
+- platform: mqtt
+  name: "Front Room Switch"
+  command_topic: "smartthings/Front Room Switch/switch"
+  state_topic: "smartthings/Front Room Switch/switch"
+  qos: 0
+  payload_on: "on"
+  payload_off: "off"
+  retain: true    
+
+######## MASTER BEDROOM WALL SWITCH ########
+- platform: mqtt
+  name: "Master Bedroom Switch"
+  command_topic: "smartthings/Master Bedroom Switch/switch"
+  state_topic: "smartthings/Master Bedroom Switch/switch"
+  qos: 0
+  payload_on: "on"
+  payload_off: "off"
+  retain: true    
+
+######## ANDREA WALL SWITCH ########
+- platform: mqtt
+  name: "Andrea Switch"
+  command_topic: "smartthings/Andrea Switch/switch"
+  state_topic: "smartthings/Andrea Switch/switch"
+  qos: 0
+  payload_on: "on"
+  payload_off: "off"
+  retain: true   
+
+######## BRENDAN WALL SWITCH ########
+- platform: mqtt
+  name: "Brendan Switch"
+  command_topic: "smartthings/Brendan Switch/switch"
+  state_topic: "smartthings/Brendan Switch/switch"
+  qos: 0
+  payload_on: "on"
+  payload_off: "off"
+  retain: true    
+
 ######## OFFICE MOTION SENSOR ########
 - platform: mqtt
   name: "Office Motion Sensor"
