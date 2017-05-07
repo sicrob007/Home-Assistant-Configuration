@@ -2,8 +2,8 @@
 alias: Turn On Office Lights when motion is detected
 trigger:
   platform: state
-  entity_id: switch.office_motion_sensor
+  entity_id: sensor.office_motion_sensor
   to: 'on'
 action:
   service: light.turn_on
-  entity_id: light.office_desk_light, light.office_front_light
+  entity_id: switch.office_switch, light.office_desk_light, light.office_front_light

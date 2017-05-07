@@ -123,3 +123,22 @@
   icon: mdi:harddisk
   unit_of_measurement: '%'
   value_template: '{{ value_json.fs[2].percent }}'
+
+######## OFFICE MOTION SENSOR ########
+- platform: mqtt
+  name: "Office Motion Sensor"
+  command_topic: "smartthings/Office Motion Sensor/motion"
+  state_topic: "smartthings/Office Motion Sensor/motion"
+  qos: 0
+  payload_on: "active"
+  payload_off: "inactive"
+  retain: true
+
+######## RING DOORBELL MONITORING ########
+- platform: ring
+  monitored_conditions:
+    - battery
+    - last_activity
+    - last_ding
+    - last_motion
+    - volume  

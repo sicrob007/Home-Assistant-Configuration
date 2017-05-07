@@ -45,6 +45,7 @@ Brendan:
 ######## MONITOR VIEW ########  
 Monitor:
   view: yes
+  icon: mdi:desktop-mac
   entities:
     - group.raspberry_pi
     - group.speedtest
@@ -54,9 +55,11 @@ Monitor:
 ######## AUTOMATION VIEW ########  
 Automation:
   view: yes
+  icon: mdi:wrench
   entities:
     - group.switches
     - group.all_automations
+    - group.ring
 
 ######## THERMOSTAT GROUP ########
 Thermostat:
@@ -162,3 +165,15 @@ Switches:
     - switch.andrea_door_code
     - switch.kellie_door_code
     - switch.robert_door_code
+
+######## RING ########  
+Ring:
+  view: no
+  entities:
+    - binary_sensor.ring_front_door_ding
+    - binary_sensor.ring_front_door_motion
+    - sensor.ring_front_door_battery
+    - sensor.ring_front_door_last_activity
+    - sensor.ring_front_door_last_ding
+    - sensor.ring_front_door_last_motion
+    - sensor.ring_front_door_volume

@@ -7,4 +7,4 @@ action:
   - service: light.turn_on
     data_template:
       entity_id: light.office_desk_light, light.office_front_light
-      brightness: '{{ trigger.to_state.state | int }}'
+      brightness: '{{ states.input_slider.office_brightness.state | int }}'

@@ -14,7 +14,6 @@ homeassistant:
 group: !include groups.yaml
 device_tracker: !include device_trackers.yaml
 sensor: !include sensors.yaml
-#Not supported with HTTPS.  Will fix later
 panel_iframe: !include panels.yaml
 light: !include light.yaml
 switch: !include switch.yaml
@@ -26,6 +25,7 @@ notify: !include notify.yaml
 history: !include history.yaml
 media_player: !include media_player.yaml
 weblink: !include weblink.yaml
+binary_sensor: !include binary_sensor.yaml
 ####################################################
 #                                                  #
 #                     ENABLES                      #
@@ -68,3 +68,8 @@ climate:
 tts:
   - platform: google
     cache: false
+
+#Ring Doorbell
+ring:
+  username: !secret ring_username
+  password: !secret ring_password
