@@ -8,7 +8,8 @@ default_view:
     - device_tracker.androidca44f37b0ad29a0a
     - device_tracker.90e7c4e82d12
     - group.thermostat
-    - group.home_lights
+    - group.downstairs_lights
+    - group.upstairs_lights
     - group.lock
     - media_player.roku_stick
     - media_player.roku_stick_2
@@ -113,17 +114,43 @@ MediaCenter PC:
     - sensor.mediacenter_tv
     - weblink.mediacenter_glances_monitoring
 
-######## All LIGHTS GROUP ########  
-Home Lights:
+######## UPSTAIRS GROUP ########  
+Upstairs Lights:
   view: no
   entities:
-    - group.Office_Lights
-    - group.Family_Room_Lights
-    - switch.Living_Room_Switch
-    - group.Hall_Lights
     - switch.master_bedroom_switch
-    - switch.Brendan_Switch
-    - switch.Andrea_Switch    
+    - switch.brendan_switch
+    - switch.andrea_switch
+    - switch.stairs_switch
+    - switch.upstairs_hallway_switch
+
+######## DOWNSTAIRS LIGHTS GROUP ########  
+Downstairs Lights:
+  view: no
+  entities:
+    - group.front_room_lights
+    - group.back_room_lights
+    - group.hall_lights
+    - group.office_lights
+
+
+######## FRONT ROOM LIGHT GROUP ########  
+Front Room Lights:
+  icon: mdi:lamp
+  view: no
+  entities:
+    - switch.front_room_ceiling_switch
+    - switch.porch_switch
+    - switch.front_room_switch
+    - light.front_room_lamp
+
+######## BACK ROOM LIGHT GROUP ########  
+Back Room Lights:
+  icon: mdi:lamp
+  view: no
+  entities:
+    - switch.back_room_switch
+    - light.back_room_lamp  
 
 ######## FAMILY ROOM LIGHT GROUP ########  
 Family Room Lights:
@@ -138,6 +165,8 @@ Hall Lights:
   icon: mdi:lamp
   view: no
   entities:
+    - switch.downstairs_hallway_switch
+    - input_slider.hallway_brightness
     - light.hall_office_light
     - light.hall_bathroom_light
 
@@ -146,7 +175,7 @@ Office Lights:
   icon: mdi:domain
   view: no
   entities:
-    - switch.Office_Switch
+    - switch.office_switch
     - input_slider.office_brightness  
     - light.office_desk_light
     - light.office_front_light

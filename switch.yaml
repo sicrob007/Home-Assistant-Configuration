@@ -78,14 +78,74 @@
   qos: 0
   payload_on: "on"
   payload_off: "off"
+  retain: true
+
+######## BACKROOM WALL SWITCH ########
+- platform: mqtt
+  name: "Back Room Switch"
+  command_topic: "smartthings/Back Room Switch/switch"
+  state_topic: "smartthings/Back Room Switch/switch"
+  qos: 0
+  payload_on: "on"
+  payload_off: "off"
+  retain: true
+
+######## DOWNSTAIRS HALLWAY SWITCH ########
+- platform: mqtt
+  name: "Downstairs Hallway Switch"
+  command_topic: "smartthings/Downstairs Hallway Switch/switch"
+  state_topic: "smartthings/Downstairs Hallway Switch/switch"
+  qos: 0
+  payload_on: "on"
+  payload_off: "off"
+  retain: true
+
+######## FRONT ROOM CEILING SWITCH ########
+- platform: mqtt
+  name: "Front Room Ceiling Switch"
+  command_topic: "smartthings/Front Room Ceiling Switch/switch"
+  state_topic: "smartthings/Front Room Ceiling Switch/switch"
+  qos: 0
+  payload_on: "on"
+  payload_off: "off"
+  retain: true
+
+######## FRONT ROOM SWITCH ########
+- platform: mqtt
+  name: "Front Room Switch"
+  command_topic: "smartthings/Front Room Switch/switch"
+  state_topic: "smartthings/Front Room Switch/switch"
+  qos: 0
+  payload_on: "on"
+  payload_off: "off"
   retain: true    
 
-######## OFFICE MOTION SENSOR ########
+######## PORCH SWITCH ########
 - platform: mqtt
-  name: "Office Motion Sensor"
-  command_topic: "smartthings/Office Motion Sensor/motion"
-  state_topic: "smartthings/Office Motion Sensor/motion"
+  name: "Porch Switch"
+  command_topic: "smartthings/Porch Switch/switch"
+  state_topic: "smartthings/Porch Switch/switch"
   qos: 0
-  payload_on: "active"
-  payload_off: "inactive"
-  retain: true  
+  payload_on: "on"
+  payload_off: "off"
+  retain: true    
+
+######## STAIRS SWITCH ########
+- platform: mqtt
+  name: "Stairs Switch"
+  command_topic: "smartthings/Stairs Switch/switch"
+  state_topic: "smartthings/Stairs Switch/switch"
+  qos: 0
+  payload_on: "on"
+  payload_off: "off"
+  retain: true    
+
+######## UPSTAIRS HALLWAY SWITCH ########
+- platform: mqtt
+  name: "Upstairs Hallway Switch"
+  command_topic: "smartthings/Upstairs Hallway Switch/switch"
+  state_topic: "smartthings/Upstairs Hallway Switch/switch"
+  qos: 0
+  payload_on: "on"
+  payload_off: "off"
+  retain: true    
