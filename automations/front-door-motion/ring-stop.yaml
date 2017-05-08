@@ -1,5 +1,5 @@
 ########Turn Off Porch and Front Room if motion detected########
-alias: Turn Off Porch and Front Room if no motion
+alias: Turn Off Porch and Front Room if no motion detected 1hr before sunset until sunrise.
 trigger:
   platform: state
   entity_id: binary_sensor.ring_front_door_motion

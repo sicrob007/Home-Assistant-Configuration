@@ -1,0 +1,9 @@
+########Turn Off Back Room Lamp with switch########
+alias: Turn Off Back Room Lamp with switch
+trigger:
+  platform: state
+  entity_id: switch.back_room_switch
+  to: 'off'
+action:
+  service: light.turn_off
+  entity_id: light.back_room_lamp

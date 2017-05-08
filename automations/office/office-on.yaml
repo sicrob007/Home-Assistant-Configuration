@@ -5,5 +5,5 @@ trigger:
   entity_id: sensor.office_motion_sensor
   to: 'on'
 action:
-  service: light.turn_on
-  entity_id: switch.office_switch, light.office_desk_light, light.office_front_light
+  service: switch.turn_on
+  entity_id: switch.office_switch

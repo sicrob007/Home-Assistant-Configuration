@@ -35,6 +35,7 @@ Andrea:
   entities:
     - media_player.insigniaroku_tv__2n002p734475
     - media_player.andrea_roku
+    - media_player.andrea_roku_2
   
 ######## BRENDAN ROOM VIEW ########
 Brendan:
@@ -42,6 +43,7 @@ Brendan:
   entities:
     - media_player.insigniaroku_tv__2n00g3592302
     - media_player.brendan_roku
+    - media_player.brendan_roku_2
   
 ######## MONITOR VIEW ########  
 Monitor:
