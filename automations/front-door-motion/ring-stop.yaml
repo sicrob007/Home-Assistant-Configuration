@@ -1,7 +1,7 @@
 ########Turn Off Porch and Front Room if motion detected########
 alias: Turn Off Porch and Front Room if no motion detected 1hr before sunset until sunrise.
 trigger:
-  platform: state
+- platform: state
   entity_id: binary_sensor.ring_front_door_motion
   to: 'off'
   for:
@@ -9,7 +9,7 @@ trigger:
 condition:
   condition: sun
   after: sunset
-  after_offset: "-1:00:00"
+  after_offset: "-0:30:00"
 action:
   service: switch.turn_off
   entity_id: switch.front_room_ceiling_switch, switch.porch_switch, switch.front_room_switch
