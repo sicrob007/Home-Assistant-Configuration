@@ -3,14 +3,23 @@
 ######## DEFAULT VIEW ########
 default_view:
   view: yes
+  icon: mdi:home-assistant
   entities:
     - device_tracker.5vt5t16226000048
     - device_tracker.androidca44f37b0ad29a0a
     - device_tracker.90e7c4e82d12
-    - group.thermostat
     - group.downstairs_lights
     - group.upstairs_lights
-    - group.lock
+    - group.thermostat
+    - group.weather
+    - group.front_door_lock
+    - group.media
+
+######## MEDIA VIEW ########  
+Media:
+  view: yes
+  icon: mdi:monitor-multiple
+  entities:
     - media_player.roku_stick
     - media_player.roku_stick_2
     - media_player.roku_2
@@ -21,17 +30,12 @@ default_view:
     - media_player.plex_web_chrome
     - media_player.roku_2l543f180811_2
     - media_player.roku_stick__2l543f180811
-
-######## NEST VIEW ########
-Nest:
-  view: yes
-  entities:
-    - group.thermostat
-    - group.weather
+    - group.andrea
+    - group.brendan
 
 ######## ANDREA ROOM VIEW ########
 Andrea:
-  view: yes
+  view: no
   entities:
     - media_player.insigniaroku_tv__2n002p734475
     - media_player.andrea_roku
@@ -39,7 +43,7 @@ Andrea:
   
 ######## BRENDAN ROOM VIEW ########
 Brendan:
-  view: yes
+  view: no
   entities:
     - media_player.insigniaroku_tv__2n00g3592302
     - media_player.brendan_roku
@@ -48,7 +52,7 @@ Brendan:
 ######## MONITOR VIEW ########  
 Monitor:
   view: yes
-  icon: mdi:desktop-mac
+  icon: mdi:desktop-tower
   entities:
     - group.raspberry_pi
     - group.speedtest
@@ -61,8 +65,35 @@ Automation:
   icon: mdi:wrench
   entities:
     - group.switches
+    - group.sensors
     - group.all_automations
     - group.ring
+
+######## DOWNSTAIRS LIGHTS GROUP ########  
+Downstairs Lights:
+  view: no
+  entities:
+    - group.front_room_lights
+    - group.back_room_lights
+    - group.hall_lights
+    - group.office_lights
+
+######## UPSTAIRS GROUP ########  
+Upstairs Lights:
+  view: no
+  entities:
+    - switch.master_bedroom_switch
+    - switch.brendan_switch
+    - switch.andrea_switch
+    - switch.stairs_switch
+    - switch.upstairs_hallway_switch
+
+######## LOCK GROUP ########  
+Front Door Lock:
+  view: no
+  entities:
+    - lock.screen_door_lock
+    - lock.inside_lock
 
 ######## THERMOSTAT GROUP ########
 Thermostat:
@@ -116,26 +147,6 @@ MediaCenter PC:
     - sensor.mediacenter_tv
     - weblink.mediacenter_glances_monitoring
 
-######## UPSTAIRS GROUP ########  
-Upstairs Lights:
-  view: no
-  entities:
-    - switch.master_bedroom_switch
-    - switch.brendan_switch
-    - switch.andrea_switch
-    - switch.stairs_switch
-    - switch.upstairs_hallway_switch
-
-######## DOWNSTAIRS LIGHTS GROUP ########  
-Downstairs Lights:
-  view: no
-  entities:
-    - group.front_room_lights
-    - group.back_room_lights
-    - group.hall_lights
-    - group.office_lights
-
-
 ######## FRONT ROOM LIGHT GROUP ########  
 Front Room Lights:
   icon: mdi:lamp
@@ -182,12 +193,13 @@ Office Lights:
     - light.office_desk_light
     - light.office_front_light
 
-######## LOCK GROUP ########  
-Lock:
+######## DISPLAY SENSORS ########  
+Sensors:
   view: no
   entities:
-    - sensor.mqtt_sensor
-    - lock.mqtt_lock
+   - sensor.screen_door_battery
+   - sensor.inside_lock_battery
+   - sensor.office_motion_sensor
 
 ######## SWITCHES GROUP ########  
 Switches:

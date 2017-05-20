@@ -100,17 +100,16 @@
         friendly_name: Bedroom Plex
 
 ########CUSTOMIZE LOCK and BATTERY########        
-     sensor.mqtt_sensor:
-        friendly_name: Schlage Battery
+     sensor.inside_lock_battery:
         icon: mdi:battery-charging-80
-     lock.mqtt_lock:
-        friendly_name: Schlage Lock
+     sensor.screen_door_battery:
+        icon: mdi:battery-charging-80
+
+######## CUSTOMIZE MOTION SENSORS ########
+     sensor.office_motion_sensor:
+        icon:mdi: walk
 
 ########CUSTOMIZE SENSORS########
      group.all_automations:
         hidden: false
         friendly_name: Automations  
-        
-########CUSTOMIZE SWITCHES########
-     switch.office_switch:
-        icon: mdi:domain

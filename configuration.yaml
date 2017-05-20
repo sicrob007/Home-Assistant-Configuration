@@ -6,6 +6,7 @@ homeassistant:
   unit_system: imperial
   time_zone: !secret time_zone
   customize: !include customize.yaml
+  customize_domain: !include customizedomain.yaml
 ####################################################
 #                                                  #
 #                     INCLUDES                     #

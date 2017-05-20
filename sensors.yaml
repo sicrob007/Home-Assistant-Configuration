@@ -50,9 +50,17 @@
     - 'humidity'
     - 'operation_mode'
 
+######## FRONT DOOR SCREEN DOOR LOCK BATTERY SENSOR ########    
+- platform: mqtt
+  name: Screen Door Battery
+  state_topic: "smartthings/Front Door Deadbolt/battery"
+  unit_of_measurement: "%"
+  retain: true
+
 ######## FRONT DOOR LOCK BATTERY SENSOR ########    
 - platform: mqtt
-  state_topic: "smartthings/Front Door Deadbolt/battery"
+  name: Inside Lock Battery
+  state_topic: "smartthings/Inside Lock/battery"
   unit_of_measurement: "%"
   retain: true
 
