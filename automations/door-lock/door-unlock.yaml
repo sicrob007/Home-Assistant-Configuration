@@ -1,0 +1,9 @@
+########Unlock inside lock on screen door lock state change########
+alias: Unlock Inside Door
+trigger:
+  platform: state
+  entity_id: lock.screen_door_lock
+  to: 'unlocked'
+action:
+  service: lock.unlock
+  entity_id: lock.inside_lock

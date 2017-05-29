@@ -4,7 +4,7 @@ initial_state: True
 hide_entity: False
 trigger:
   platform: state
-  entity_id: lock.mqtt_lock
+  entity_id: lock.screen_door_lock
   to: 'unlocked'
   for:
     minutes: 15

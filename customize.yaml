@@ -16,6 +16,10 @@
         friendly_name: Outside Temperature
      sensor.dark_sky_wind_speed:
         friendly_name: Wind
+     sensor.dark_sky_daily_high_temperature:
+        friendly_name: Max
+     sensor.dark_sky_daily_low_temperature:
+        friendly_name: Min
      sun.sun:
         hidden: true
         
@@ -107,7 +111,9 @@
 
 ######## CUSTOMIZE MOTION SENSORS ########
      sensor.office_motion_sensor:
-        icon:mdi: walk
+        icon: mdi:walk
+     sensor.office_motion_sensor_battery:
+        icon: mdi:battery-charging-80
 
 ########CUSTOMIZE SENSORS########
      group.all_automations:

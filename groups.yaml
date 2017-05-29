@@ -109,6 +109,8 @@ Weather:
     - sensor.dark_sky_temperature
     - sensor.downstairs_thermostat_temperature
     - sensor.dark_sky_wind_speed
+    - sensor.dark_sky_daily_high_temperature
+    - sensor.dark_sky_daily_low_temperature
 
 ######## SPEEDTEST GROUP ########
 Speedtest:
@@ -200,6 +202,7 @@ Sensors:
    - sensor.screen_door_battery
    - sensor.inside_lock_battery
    - sensor.office_motion_sensor
+   - sensor.office_motion_sensor_battery
 
 ######## SWITCHES GROUP ########  
 Switches:

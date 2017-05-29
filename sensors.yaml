@@ -7,6 +7,8 @@
     - summary
     - temperature
     - wind_speed
+    - temperature_max
+    - temperature_min
 
 ######## SPEEDTEST SENSOR ########
 - platform: speedtest
@@ -141,6 +143,12 @@
   payload_on: "active"
   payload_off: "inactive"
   retain: true
+
+######## OFFICE MOTION SENSOR Battery ########
+- platform: mqtt
+  name: "Office Motion Sensor Battery"
+  state_topic: "smartthings/Office Motion Sensor/battery"
+  unit_of_measurement: "%"
 
 ######## RING DOORBELL MONITORING ########
 - platform: ring

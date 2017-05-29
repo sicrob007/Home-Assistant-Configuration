@@ -1,15 +1,15 @@
 office_brightness:
   name: Office Brightness
-  initial: 254
+  initial: 255
   min: 1
-  max: 254
+  max: 255
   step: 1
   icon: mdi:lightbulb-on-outline
 
 hallway_brightness:
   name: Hallway Brightness
-  initial: 254
+  initial: 255
   min: 1
-  max: 254
+  max: 255
   step: 1
   icon: mdi:lightbulb-on-outline  
