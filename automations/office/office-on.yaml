@@ -1,9 +1,0 @@
-########Turn On Office Lights when motion is detected########
-alias: Turn On Office Lights when motion is detected
-trigger:
-  platform: state
-  entity_id: sensor.office_motion_sensor
-  to: 'active'
-action:
-  service: switch.turn_on
-  entity_id: switch.office_switch

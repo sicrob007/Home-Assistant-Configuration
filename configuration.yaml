@@ -19,7 +19,7 @@ panel_iframe: !include panels.yaml
 light: !include light.yaml
 switch: !include switch.yaml
 lock: !include lock.yaml
-automation: !include_dir_list automations
+automation: !include automations.yaml
 input_slider: !include input_slider.yaml
 #input_select: !include input_select.yaml
 notify: !include notify.yaml

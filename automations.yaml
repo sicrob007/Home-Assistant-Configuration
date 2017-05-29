@@ -1,0 +1,204 @@
+- id: andrea_arrive_home
+  ########Notification when Andrea arrives########
+  alias: Andrea arrives home
+  initial_state: True
+  hide_entity: False
+  trigger:
+    platform: mqtt
+    topic: "smartthings/Andrea Door Code/switch"
+    payload: "on"
+  action:
+    - service: notify.slack
+      data:
+        message: "Andrea has arrived home."
+    - service:  media_player.turn_on
+      entity_id: media_player.living_room_home
+    - service:  media_player.volume_set
+      entity_id: media_player.living_room_home
+      data:
+        volume_level: 1      
+    - service:  media_player.play_media
+      data:
+        entity_id: media_player.living_room_home
+        media_content_id: !secret andrea_greeting
+        media_content_type: audio/mp3
+    - service: mqtt.publish
+      data:
+        topic: "smartthings/Andrea Door Code/switch"
+        payload: "off"
+- id: door-unlock
+  ########Unlock inside lock on screen door lock state change########
+  alias: Unlock Inside Door
+  trigger:
+    platform: state
+    entity_id: lock.screen_door_lock
+    to: 'unlocked'
+  action:
+    service: lock.unlock
+    entity_id: lock.inside_lock
+- id: door_left_unlocked
+  ########Notification when door left unlocked########
+  alias: Door has been left unlocked.
+  initial_state: True
+  hide_entity: False
+  trigger:
+    platform: state
+    entity_id: lock.screen_door_lock
+    to: 'unlocked'
+    for:
+      minutes: 15
+  action:
+    - service: notify.slack
+      data:
+        message: "The Front Door has been left unlocked for longer than 15min.  Please investigate."
+    - service: notify.sendgrid_robert
+      data:
+        message: "The Front Door has been left unlocked for longer than 15min.  Please investigate."
+    - service: notify.sendgrid_kellie
+      data:
+        message: "The Front Door has been left unlocked for longer than 15min.  Please investigate."      
+- id: hallway_light_brightness
+  ########Adjust Hallway Brightness########
+  alias: Hallway Lights - Adjust Brightness
+  trigger:
+    platform: state
+    entity_id: input_slider.hallway_brightness
+  action:
+    - service: light.turn_on
+      data_template:
+        entity_id: light.hall_bathroom_light, light.hall_office_light
+        brightness: '{{ states.input_slider.hallway_brightness.state | int }}'
+- id: home_assistant_update
+  ########Notification when new HASS update is available########
+  alias: New HomeAssistant Update is available
+  initial_state: True
+  hide_entity: False
+  trigger:
+    platform: state
+    entity_id: updater.updater
+  action:
+    - service: notify.slack
+      data:
+        message: "A new update is now available for Home Assistant.\n\n `$ sudo systemctl stop home-assistant@homeassistant.service`\n`$ sudo su -s /bin/bash homeassistant`\n`$ source /srv/homeassistant/bin/activate`\n`$ pip3 install --upgrade homeassistant`\n`$ exit`\n`$ sudo systemctl start home-assistant@homeassistant.service`"
+- id: kellie_arrive_home
+  ########Notification when Kellie arrives########
+  alias: Kellie arrives home
+  initial_state: True
+  hide_entity: False
+  trigger:
+    platform: mqtt
+    topic: "smartthings/Kellie Door Code/switch"
+    payload: "on"
+  action:
+    - service: notify.slack
+      data:
+        message: "Kellie has arrived home."
+    - service:  media_player.turn_on
+      entity_id: media_player.living_room_home
+    - service:  media_player.volume_set
+      entity_id: media_player.living_room_home
+      data:
+        volume_level: 1      
+    - service:  media_player.play_media
+      data:
+        entity_id: media_player.living_room_home
+        media_content_id: !secret kellie_greeting
+        media_content_type: audio/mp3
+    - service: mqtt.publish
+      data:
+        topic: "smartthings/Kellie Door Code/switch"
+        payload: "off"
+- id: office-off
+  ########Turn Off Office Lights 5 min after no motion########
+  alias: Turn Off Office Lights 5 min after no motion
+  trigger:
+    platform: state
+    entity_id: sensor.office_motion_sensor
+    to: 'inactive'
+    for:
+      minutes: 5
+  action:
+    service: switch.turn_off
+    entity_id: switch.office_switch
+- id: office-on
+  ########Turn On Office Lights when motion is detected########
+  alias: Turn On Office Lights when motion is detected
+  trigger:
+    platform: state
+    entity_id: sensor.office_motion_sensor
+    to: 'active'
+  action:
+    service: switch.turn_on
+    entity_id: switch.office_switch
+- id: office_light_brightness
+  ########Adjust Office Brightness########
+  alias: Office Lights - Adjust Brightness
+  trigger:
+    platform: state
+    entity_id: input_slider.office_brightness
+  action:
+    - service: light.turn_on
+      data_template:
+        entity_id: light.office_desk_light, light.office_front_light
+        brightness: '{{ states.input_slider.office_brightness.state | int }}'
+- id: ring-motion
+  ########Turn On Porch and Front Room if motion detected########
+  alias: Turn On porch and Front Room if motion is detected 1hr before sunset until sunrise.
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.ring_front_door_motion
+    to: 'on'
+  condition:
+    condition: sun
+    after: sunset
+    after_offset: "-0:30:00"  
+  action:
+    service: switch.turn_on
+    entity_id: switch.front_room_ceiling_switch, switch.porch_switch, switch.front_room_switch
+- id: ring-stop
+  ########Turn Off Porch and Front Room if motion detected########
+  alias: Turn Off Porch and Front Room if no motion detected 1hr before sunset until sunrise.
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.ring_front_door_motion
+    to: 'off'
+    for:
+      minutes: 5
+  condition:
+    condition: sun
+    after: sunset
+    after_offset: "-0:30:00"
+  action:
+    service: switch.turn_off
+    entity_id: switch.front_room_ceiling_switch, switch.porch_switch, switch.front_room_switch
+  
+  
+- id: robert_arrive_home
+  ########Notification when Robert arrives########
+  alias: Robert arrives home
+  initial_state: True
+  hide_entity: False
+  trigger:
+    platform: mqtt
+    topic: "smartthings/Robert Door Code/switch"
+    payload: "on"
+  action:
+    - service: notify.slack
+      data:
+        message: "Robert has arrived home."
+    - service:  media_player.turn_on
+      entity_id: media_player.living_room_home
+    - service:  media_player.volume_set
+      entity_id: media_player.living_room_home
+      data:
+        volume_level: 1
+    - service: tts.google_say
+      entity_id: media_player.living_room_home
+      data_template:
+        message: >
+          {% if now().strftime("%H") | float > 17 %} Good Evening {% elif now().strftime("%H") | float > 12 %} Good afternoon {% else %} Good morning {% endif %} master.  The current time is {{ now().strftime("%l:%M %p") }}. Thermostat is currently {{ states("climate.downstairs") }}.  The current temperature outside is {{ states("sensor.dark_sky_temperature") | round(0) }}°F while it is a comfortable {{ states("sensor.downstairs_thermostat_temperature")  | round(0) }}°F inside.  The current download speed is {{ states("sensor.speedtest_download")  | round(0) }} megabits per second. Andrea is currently {% if is_state('device_tracker.90e7c4e82d12', 'home') %}home{% else %}not home{% endif %}.
+    - service: mqtt.publish
+      data:
+        topic: "smartthings/Robert Door Code/switch"
+        payload: "off"
+  
