@@ -24,7 +24,8 @@ input_slider: !include input_slider.yaml
 #input_select: !include input_select.yaml
 notify: !include notify.yaml
 history: !include history.yaml
-media_player: !include media_player.yaml
+#Commenting out again because discovery seems to be working fine.
+#media_player: !include media_player.yaml
 weblink: !include weblink.yaml
 binary_sensor: !include binary_sensor.yaml
 ####################################################
@@ -39,6 +40,9 @@ recorder:
   purge_days: 5
   db_url: postgres://@/homeassistant
 sun:
+#Bloated log files must be dealt with.
+logger:
+  default: error
 frontend:
 discovery:
 http:

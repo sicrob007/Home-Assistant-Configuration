@@ -1,11 +1,9 @@
 - platform: cast
   host: 192.168.128.55
 
-#Hiding Roku devices for now, as HA seems
-#to be discovering better now.
-#- platform: roku
-#  host: 192.168.128.52
-#- platform: roku
-#  host: 192.168.128.53
-#- platform: roku
-#  host: 192.168.128.63  
+- platform: roku
+  host: 192.168.128.52
+- platform: roku
+  host: 192.168.128.53
+- platform: roku
+  host: 192.168.128.63

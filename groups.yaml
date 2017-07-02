@@ -14,8 +14,48 @@ default_view:
     - group.weather
     - group.front_door_lock
     - group.media
+    - group.contact_sensors
+    - group.temperature_sensors
+    - group.battery_sensors
 
-######## MEDIA VIEW ########  
+######## Contact Sensors ########
+Contact Sensors:
+  view: no
+  control: hidden
+  entities:
+    - binary_sensor.andrea_bedroom_window
+    - binary_sensor.back_door
+    - binary_sensor.brendan_bedroom_window
+    - binary_sensor.front_door_deadbolt
+    - binary_sensor.garage_door
+    - binary_sensor.inside_lock
+    - binary_sensor.master_bedroom_window
+
+######## Battery Sensors ########
+Battery Sensors:
+  view: no
+  entities:
+    - sensor.andrea_bedroom_battery
+    - sensor.brendan_bedroom_battery
+    - sensor.downstairs_backdoor_battery
+    - sensor.front_door_deadbolt_status_battery
+    - sensor.garage_door_battery
+    - sensor.inside_lock_status_battery
+    - sensor.master_bedroom_battery
+
+######## Temperature Sensors ########
+Temperature Sensors:
+  view: no
+  entities:
+    - sensor.andrea_bedroom_temperature
+    - sensor.brendan_bedroom_temperature
+    - sensor.downstairs_backdoor_temperature
+    - sensor.front_door_deadbolt_temperature
+    - sensor.garage_door_temperature
+    - sensor.inside_lock_temperature
+    - sensor.master_bedroom_temperature
+
+######## MEDIA VIEW ########
 Media:
   view: yes
   icon: mdi:monitor-multiple
@@ -40,7 +80,7 @@ Andrea:
     - media_player.insigniaroku_tv__2n002p734475
     - media_player.andrea_roku
     - media_player.andrea_roku_2
-  
+
 ######## BRENDAN ROOM VIEW ########
 Brendan:
   view: no
@@ -48,8 +88,8 @@ Brendan:
     - media_player.insigniaroku_tv__2n00g3592302
     - media_player.brendan_roku
     - media_player.brendan_roku_2
-  
-######## MONITOR VIEW ########  
+
+######## MONITOR VIEW ########
 Monitor:
   view: yes
   icon: mdi:desktop-tower
@@ -59,7 +99,7 @@ Monitor:
     - group.gamer_pc
     - group.mediacenter_pc
 
-######## AUTOMATION VIEW ########  
+######## AUTOMATION VIEW ########
 Automation:
   view: yes
   icon: mdi:wrench
@@ -69,7 +109,7 @@ Automation:
     - group.all_automations
     - group.ring
 
-######## DOWNSTAIRS LIGHTS GROUP ########  
+######## DOWNSTAIRS LIGHTS GROUP ########
 Downstairs Lights:
   view: no
   entities:
@@ -78,7 +118,7 @@ Downstairs Lights:
     - group.hall_lights
     - group.office_lights
 
-######## UPSTAIRS GROUP ########  
+######## UPSTAIRS GROUP ########
 Upstairs Lights:
   view: no
   entities:
@@ -88,7 +128,7 @@ Upstairs Lights:
     - switch.stairs_switch
     - switch.upstairs_hallway_switch
 
-######## LOCK GROUP ########  
+######## LOCK GROUP ########
 Front Door Lock:
   view: no
   entities:
@@ -100,8 +140,8 @@ Thermostat:
   view: no
   entities:
     - climate.downstairs
-  
-######## WEATHER GROUP ########  
+
+######## WEATHER GROUP ########
 Weather:
   view: no
   entities:
@@ -120,15 +160,15 @@ Speedtest:
     - sensor.speedtest_upload
     - sensor.speedtest_ping
 
-######## PI GROUP ########  
+######## PI GROUP ########
 Raspberry Pi:
   view: no
   entities:
     - sensor.cpu_use
     - sensor.ram_free
     - sensor.disk_use_home
-    
-######## GAMER GROUP ########  
+
+######## GAMER GROUP ########
 Gamer PC:
   view: no
   entities:
@@ -138,7 +178,7 @@ Gamer PC:
     - sensor.gamer_d
     - weblink.gamer_glances_monitoring
 
-######## MEDIACENTER GROUP ########  
+######## MEDIACENTER GROUP ########
 MediaCenter PC:
   view: no
   entities:
@@ -149,7 +189,7 @@ MediaCenter PC:
     - sensor.mediacenter_tv
     - weblink.mediacenter_glances_monitoring
 
-######## FRONT ROOM LIGHT GROUP ########  
+######## FRONT ROOM LIGHT GROUP ########
 Front Room Lights:
   icon: mdi:lamp
   view: no
@@ -159,23 +199,23 @@ Front Room Lights:
     - switch.front_room_switch
     - light.front_room_lamp
 
-######## BACK ROOM LIGHT GROUP ########  
+######## BACK ROOM LIGHT GROUP ########
 Back Room Lights:
   icon: mdi:lamp
   view: no
   entities:
     - switch.back_room_switch
-    - light.back_room_lamp  
+    - light.back_room_lamp
 
-######## FAMILY ROOM LIGHT GROUP ########  
+######## FAMILY ROOM LIGHT GROUP ########
 Family Room Lights:
   icon: mdi:television
   view: no
   entities:
     - light.front_room_lamp
-    - light.back_room_lamp  
+    - light.back_room_lamp
 
-######## HALL LIGHTS GROUP ########  
+######## HALL LIGHTS GROUP ########
 Hall Lights:
   icon: mdi:lamp
   view: no
@@ -185,17 +225,17 @@ Hall Lights:
     - light.hall_office_light
     - light.hall_bathroom_light
 
-######## OFFICE LIGHTS GROUP ########  
+######## OFFICE LIGHTS GROUP ########
 Office Lights:
   icon: mdi:domain
   view: no
   entities:
     - switch.office_switch
-    - input_slider.office_brightness  
+    - input_slider.office_brightness
     - light.office_desk_light
     - light.office_front_light
 
-######## DISPLAY SENSORS ########  
+######## DISPLAY SENSORS ########
 Sensors:
   view: no
   entities:
@@ -204,7 +244,7 @@ Sensors:
    - sensor.office_motion_sensor
    - sensor.office_motion_sensor_battery
 
-######## SWITCHES GROUP ########  
+######## SWITCHES GROUP ########
 Switches:
   control: hidden
   entities:
@@ -212,7 +252,7 @@ Switches:
     - switch.kellie_door_code
     - switch.robert_door_code
 
-######## RING ########  
+######## RING ########
 Ring:
   view: no
   entities:

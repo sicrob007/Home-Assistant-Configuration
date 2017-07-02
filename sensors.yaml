@@ -52,14 +52,14 @@
     - 'humidity'
     - 'operation_mode'
 
-######## FRONT DOOR SCREEN DOOR LOCK BATTERY SENSOR ########    
+######## FRONT DOOR SCREEN DOOR LOCK BATTERY SENSOR ########
 - platform: mqtt
   name: Screen Door Battery
   state_topic: "smartthings/Front Door Deadbolt/battery"
   unit_of_measurement: "%"
   retain: true
 
-######## FRONT DOOR LOCK BATTERY SENSOR ########    
+######## FRONT DOOR LOCK BATTERY SENSOR ########
 - platform: mqtt
   name: Inside Lock Battery
   state_topic: "smartthings/Inside Lock/battery"
@@ -157,4 +157,76 @@
     - last_activity
     - last_ding
     - last_motion
-    - volume  
+    - volume
+
+######## Temperature Sensors ########
+- platform: mqtt
+  name: "Andrea Bedroom Temperature"
+  state_topic: "smartthings/Andrea Status/temperature"
+  unit_of_measurement: "%"
+
+- platform: mqtt
+  name: "Brendan Bedroom Temperature"
+  state_topic: "smartthings/Brendan Status/temperature"
+  unit_of_measurement: "%"
+
+- platform: mqtt
+  name: "Downstairs Backdoor Temperature"
+  state_topic: "smartthings/Downstairs Back Door/temperature"
+  unit_of_measurement: "%"
+
+- platform: mqtt
+  name: "Front Door Deadbolt Temperature"
+  state_topic: "smartthings/Front Door Deadbolt Status/temperature"
+  unit_of_measurement: "%"
+
+- platform: mqtt
+  name: "Garage Door Temperature"
+  state_topic: "smartthings/Garage Door/temperature"
+  unit_of_measurement: "%"
+
+- platform: mqtt
+  name: "Inside Lock Temperature"
+  state_topic: "smartthings/Inside Lock Status/temperature"
+  unit_of_measurement: "%"
+
+- platform: mqtt
+  name: "Master Bedroom Temperature"
+  state_topic: "smartthings/Master Bedroom Status/temperature"
+  unit_of_measurement: "%"
+
+######## Battery Sensors ########
+- platform: mqtt
+  name: Andrea Bedroom Battery
+  state_topic: "smartthings/Andrea Status/battery"
+  unit_of_measurement: "%"
+
+- platform: mqtt
+  name: Brendan Bedroom Battery
+  state_topic: "smartthings/Brendan Status/battery"
+  unit_of_measurement: "%"
+
+- platform: mqtt
+  name: Downstairs Backdoor Battery
+  state_topic: "smartthings/Downstairs Back Door/battery"
+  unit_of_measurement: "%"
+
+- platform: mqtt
+  name: Front Door Deadbolt Status Battery
+  state_topic: "smartthings/Front Door Deadbolt Status/battery"
+  unit_of_measurement: "%"
+
+- platform: mqtt
+  name: Garage Door Battery
+  state_topic: "smartthings/Garage Door/battery"
+  unit_of_measurement: "%"
+
+- platform: mqtt
+  name: Inside Lock Status Battery
+  state_topic: "smartthings/Inside Lock Status/battery"
+  unit_of_measurement: "%"
+
+- platform: mqtt
+  name: Master Bedroom Battery
+  state_topic: "smartthings/Master Bedroom Status/battery"
+  unit_of_measurement: "%"
