@@ -22,7 +22,7 @@
         friendly_name: Min
      sun.sun:
         hidden: true
-        
+
 ########CUSTOMIZE NEST########
      binary_sensor.downstairs_thermostat_fan:
         hidden: true
@@ -39,13 +39,13 @@
      sensor.downstairs_thermostat_humidity:
         hidden: true
      sensor.downstairs_thermostat_operation_mode:
-        hidden: true     
+        hidden: true
      sensor.downstairs_thermostat_target:
         hidden: true
      sensor.downstairs_thermostat_hvac_state:
         hidden: true
-     climate.downstairs:        
-        friendly_name: Nest  
+     climate.downstairs:
+        friendly_name: Nest
 
 ########CUSTOMIZE SPEEDTEST########
      sensor.speedtest_download:
@@ -54,9 +54,9 @@
      sensor.speedtest_upload:
         friendly_name: Upload Speed
         icon: mdi:upload
-     sensor.speedtest_ping:     
+     sensor.speedtest_ping:
         friendly_name: Ping
-        icon: mdi:speedometer        
+        icon: mdi:speedometer
 
 ########CUSTOMIZE GAMER PC########
      sensor.gamer_disk_use:
@@ -69,7 +69,7 @@
         icon: mdi:memory
      sensor.gamer_ram_free:
         icon: mdi:memory
-        
+
 
 ########CUSTOMIZE MEDICENTER PC########
      sensor.mediacenter_cpu_use:
@@ -103,19 +103,11 @@
      media_player.roku_stick__2l543f180811:
         friendly_name: Bedroom Plex
 
-########CUSTOMIZE LOCK and BATTERY########        
-     sensor.inside_lock_battery:
-        icon: mdi:battery-charging-80
-     sensor.screen_door_battery:
-        icon: mdi:battery-charging-80
-
 ######## CUSTOMIZE MOTION SENSORS ########
      sensor.office_motion_sensor:
         icon: mdi:walk
-     sensor.office_motion_sensor_battery:
-        icon: mdi:battery-charging-80
 
 ########CUSTOMIZE SENSORS########
      group.all_automations:
         hidden: false
-        friendly_name: Automations  
+        friendly_name: Automations

@@ -26,7 +26,7 @@
   device_class: opening
 
 - platform: mqtt
-  state_topic: "smartthings/Front Door Deadbolt/contact"
+  state_topic: "smartthings/Front Door Deadbolt Status/contact"
   name: Front Door Deadbolt
   payload_on: "open"
   payload_off: "closed"

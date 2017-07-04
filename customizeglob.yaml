@@ -1,0 +1,7 @@
+########CUSTOMIZE ALL SWITCHES########
+    switch:
+      icon: mdi:switch
+    "*_battery":
+      icon: mdi:battery-charging-80
+    "*_temperature":
+      icon: mdi:thermometer

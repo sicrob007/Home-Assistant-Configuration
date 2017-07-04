@@ -7,6 +7,7 @@ homeassistant:
   time_zone: !secret time_zone
   customize: !include customize.yaml
   customize_domain: !include customizedomain.yaml
+  customize_glob: !include customizeglob.yaml
 ####################################################
 #                                                  #
 #                     INCLUDES                     #
