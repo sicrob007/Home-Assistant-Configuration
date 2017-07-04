@@ -60,6 +60,7 @@ Media:
   view: yes
   icon: mdi:monitor-multiple
   entities:
+    - media_player.living_room_roku
     - media_player.roku_stick
     - media_player.roku_stick_2
     - media_player.roku_2

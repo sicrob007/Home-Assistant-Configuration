@@ -163,37 +163,37 @@
 - platform: mqtt
   name: "Andrea Bedroom Temperature"
   state_topic: "smartthings/Andrea Status/temperature"
-  unit_of_measurement: "%"
+  unit_of_measurement: "°F"
 
 - platform: mqtt
   name: "Brendan Bedroom Temperature"
   state_topic: "smartthings/Brendan Status/temperature"
-  unit_of_measurement: "%"
+  unit_of_measurement: "°F"
 
 - platform: mqtt
   name: "Downstairs Backdoor Temperature"
   state_topic: "smartthings/Downstairs Back Door/temperature"
-  unit_of_measurement: "%"
+  unit_of_measurement: "°F"
 
 - platform: mqtt
   name: "Front Door Deadbolt Temperature"
   state_topic: "smartthings/Front Door Deadbolt Status/temperature"
-  unit_of_measurement: "%"
+  unit_of_measurement: "°F"
 
 - platform: mqtt
   name: "Garage Door Temperature"
   state_topic: "smartthings/Garage Door/temperature"
-  unit_of_measurement: "%"
+  unit_of_measurement: "°F"
 
 - platform: mqtt
   name: "Inside Lock Temperature"
   state_topic: "smartthings/Inside Lock Status/temperature"
-  unit_of_measurement: "%"
+  unit_of_measurement: "°F"
 
 - platform: mqtt
   name: "Master Bedroom Temperature"
   state_topic: "smartthings/Master Bedroom Status/temperature"
-  unit_of_measurement: "%"
+  unit_of_measurement: "°F"
 
 ######## Battery Sensors ########
 - platform: mqtt

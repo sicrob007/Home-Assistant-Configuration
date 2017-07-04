@@ -16,7 +16,7 @@
     - service:  media_player.volume_set
       entity_id: media_player.living_room_home
       data:
-        volume_level: 1      
+        volume_level: 1
     - service:  media_player.play_media
       data:
         entity_id: media_player.living_room_home
@@ -36,6 +36,34 @@
   action:
     service: lock.unlock
     entity_id: lock.inside_lock
+- id: screen-closed-lock
+  ########Autolock screen door after 5 min########
+  alias: Screen Door Left unlocked while closed lock it.
+  initial_state: True
+  hide_entity: False
+  trigger:
+    platform: state
+    entity_id: binary_sensor.front_door_deadbolt
+    to: 'off'
+    for:
+      minutes: 5
+  action:
+      service: lock.lock
+      entity_id: lock.screen_door_lock
+- id: door-closed-lock
+  ########Autolock door after 5 min########
+  alias: Front Door Left unlocked while closed lock it.
+  initial_state: True
+  hide_entity: False
+  trigger:
+    platform: state
+    entity_id: binary_sensor.inside_lock
+    to: 'off'
+    for:
+      minutes: 5
+  action:
+      service: lock.lock
+      entity_id: lock.inside_lock
 - id: door_left_unlocked
   ########Notification when door left unlocked########
   alias: Door has been left unlocked.
@@ -56,7 +84,7 @@
         message: "The Front Door has been left unlocked for longer than 15min.  Please investigate."
     - service: notify.sendgrid_kellie
       data:
-        message: "The Front Door has been left unlocked for longer than 15min.  Please investigate."      
+        message: "The Front Door has been left unlocked for longer than 15min.  Please investigate."
 - id: hallway_light_brightness
   ########Adjust Hallway Brightness########
   alias: Hallway Lights - Adjust Brightness
@@ -93,13 +121,13 @@
     - service: notify.slack
       data:
         message: "Kellie has arrived home."
-# Kellie didnt like being greeted by the Imperial Death March.        
+# Kellie didnt like being greeted by the Imperial Death March.
 #    - service:  media_player.turn_on
 #      entity_id: media_player.living_room_home
 #    - service:  media_player.volume_set
 #      entity_id: media_player.living_room_home
 #      data:
-#        volume_level: 1      
+#        volume_level: 1
 #    - service:  media_player.play_media
 #      data:
 #        entity_id: media_player.living_room_home
@@ -152,7 +180,7 @@
   condition:
     condition: sun
     after: sunset
-    after_offset: "-0:30:00"  
+    after_offset: "-0:30:00"
   action:
     service: switch.turn_on
     entity_id: switch.front_room_ceiling_switch, switch.porch_switch, switch.front_room_switch
@@ -172,8 +200,8 @@
   action:
     service: switch.turn_off
     entity_id: switch.front_room_ceiling_switch, switch.porch_switch, switch.front_room_switch
-  
-  
+
+
 - id: robert_arrive_home
   ########Notification when Robert arrives########
   alias: Robert arrives home
@@ -202,4 +230,3 @@
       data:
         topic: "smartthings/Robert Door Code/switch"
         payload: "off"
-  
