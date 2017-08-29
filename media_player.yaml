@@ -1,5 +1,9 @@
 - platform: cast
   host: 192.168.128.55
+- platform: cast
+  host: 192.168.128.86
+- platform: cast
+  host: 192.168.128.87
 
 - platform: roku
   host: 192.168.128.52
@@ -7,3 +11,6 @@
   host: 192.168.128.53
 - platform: roku
   host: 192.168.128.63
+
+- platform: yamaha
+  host: 192.168.128.83

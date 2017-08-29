@@ -60,19 +60,27 @@ Media:
   view: yes
   icon: mdi:monitor-multiple
   entities:
-    - media_player.living_room_roku
+    - group.google_home
+    - media_player.yamaha_rxv481
     - media_player.roku_stick
     - media_player.roku_stick_2
     - media_player.roku_2
     - media_player.roku_2l543f180811
     - media_player.sony_bravia_tv
     - media_player.plex_for_sony_opera_tv_store
-    - media_player.living_room_home
     - media_player.plex_web_chrome
     - media_player.roku_2l543f180811_2
     - media_player.roku_stick__2l543f180811
     - group.andrea
     - group.brendan
+
+Google Home:
+  view: no
+  entities:
+    - media_player.living_room_home
+    - media_player.back_room
+    - media_player.master_bedroom_home
+    - media_player.home_group
 
 ######## ANDREA ROOM VIEW ########
 Andrea:

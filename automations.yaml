@@ -121,18 +121,17 @@
     - service: notify.slack
       data:
         message: "Kellie has arrived home."
-# Kellie didnt like being greeted by the Imperial Death March.
-#    - service:  media_player.turn_on
-#      entity_id: media_player.living_room_home
-#    - service:  media_player.volume_set
-#      entity_id: media_player.living_room_home
-#      data:
-#        volume_level: 1
-#    - service:  media_player.play_media
-#      data:
-#        entity_id: media_player.living_room_home
-#        media_content_id: !secret kellie_greeting
-#        media_content_type: audio/mp3
+    - service:  media_player.turn_on
+      entity_id: media_player.living_room_home
+    - service:  media_player.volume_set
+      entity_id: media_player.living_room_home
+      data:
+        volume_level: 1
+    - service:  media_player.play_media
+      data:
+        entity_id: media_player.living_room_home
+        media_content_id: !secret kellie_greeting
+        media_content_type: audio/mp3
     - service: mqtt.publish
       data:
         topic: "smartthings/Kellie Door Code/switch"
@@ -221,11 +220,22 @@
       entity_id: media_player.living_room_home
       data:
         volume_level: 1
-    - service: tts.google_say
-      entity_id: media_player.living_room_home
-      data_template:
-        message: >
-          {% if now().strftime("%H") | float > 17 %} Good Evening {% elif now().strftime("%H") | float > 12 %} Good afternoon {% else %} Good morning {% endif %} master.  The current time is {{ now().strftime("%l:%M %p") }}. Thermostat is currently {{ states("climate.downstairs") }}.  The current temperature outside is {{ states("sensor.dark_sky_temperature") | round(0) }}°F while it is a comfortable {{ states("sensor.downstairs_thermostat_temperature")  | round(0) }}°F inside.  The current download speed is {{ states("sensor.speedtest_download")  | round(0) }} megabits per second. Andrea is currently {% if is_state('device_tracker.90e7c4e82d12', 'home') %}home{% else %}not home{% endif %}.
+    - service:  media_player.play_media
+      data:
+        entity_id: media_player.living_room_home
+        media_content_id: !secret robert_greeting
+        media_content_type: audio/mp3
+#    - service:  media_player.turn_on
+#      entity_id: media_player.living_room_home
+#    - service:  media_player.volume_set
+#      entity_id: media_player.living_room_home
+#      data:
+#        volume_level: 1
+#    - service: tts.google_say
+#      entity_id: media_player.living_room_home
+#      data_template:
+#        message: >
+#          {% if now().strftime("%H") | float > 17 %} Good Evening {% elif now().strftime("%H") | float > 12 %} Good afternoon {% else %} Good morning {% endif %} master.  The current time is {{ now().strftime("%l:%M %p") }}. Thermostat is currently {{ states("climate.downstairs") }}.  The current temperature outside is {{ states("sensor.dark_sky_temperature") | round(0) }}°F while it is a comfortable {{ states("sensor.downstairs_thermostat_temperature")  | round(0) }}°F inside.  The current download speed is {{ states("sensor.speedtest_download")  | round(0) }} megabits per second. Andrea is currently {% if is_state('device_tracker.90e7c4e82d12', 'home') %}home{% else %}not home{% endif %}.
     - service: mqtt.publish
       data:
         topic: "smartthings/Robert Door Code/switch"
